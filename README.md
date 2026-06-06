@@ -25,6 +25,23 @@ A sales intelligence tool for Grain FX that helps reps manage conference attenda
 
 ---
 
+## Deployment (Vercel)
+
+Both the client and server deploy to Vercel as separate projects.
+
+**Backend**
+1. Import the repo on Vercel → set **Root Directory** to `server`
+2. Add environment variables: `MONGODB_URI`, `GROQ_API_KEY`, `CLIENT_URL` (your frontend Vercel URL)
+3. Deploy → copy the generated URL (e.g. `https://grain-server.vercel.app`)
+
+**Frontend**
+1. Import the same repo → set **Root Directory** to `client`
+2. Add environment variable: `VITE_API_URL=https://grain-server.vercel.app/api`
+3. Deploy → copy the frontend URL
+4. Go back to the backend project → update `CLIENT_URL` to the frontend URL → redeploy
+
+---
+
 ## Setup
 
 **1. Install dependencies**
