@@ -108,7 +108,6 @@ export default function Planner() {
   }, []);
 
   const yearConfs = conferences.filter((c) => new Date(c.date).getFullYear() === year);
-  const attending = yearConfs.filter((c) => c.attending);
   const going = yearConfs.filter((c) => confStatus(c) === 'going');
   const attended = yearConfs.filter((c) => confStatus(c) === 'attended');
   const monthGroups = groupByMonth(yearConfs);
