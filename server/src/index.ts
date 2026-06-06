@@ -22,7 +22,8 @@ if (!MONGODB_URI) {
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+const clientUrl = (process.env.CLIENT_URL || 'http://localhost:5173').replace(/\/$/, '');
+app.use(cors({ origin: clientUrl }));
 app.use(express.json());
 
 // Lazy DB connection — reuses existing connection across serverless invocations
